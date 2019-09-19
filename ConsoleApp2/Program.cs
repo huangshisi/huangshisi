@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace ConsoleApp2
 {
@@ -6,6 +7,10 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello word");        }
+            string s1 = "a string";
+            string s2 = s1;
+            Console.WriteLine("s1 is"+s1);
+            Console.WriteLine("s2 is" + s2);
+        }
     }
 }
