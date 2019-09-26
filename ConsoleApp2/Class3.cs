@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp2
-{
+//namespace ConsoleApp2
+//{
     //class MainEntryPoint
     //{
     //    class MathTest
@@ -49,24 +49,24 @@ namespace ConsoleApp2
     //        }
     //    }
     //}
-    class Protest
-    {
-        static void SomeFunction(int[] ints ,int i )
-        {
-            ints[0]= 100;
-            i = 100;
-        }
-        static void Main()
-        {
-            int i = 0;
-            int[] ints = { 0, 1, 2, 4, 8 };
-            Console.WriteLine("i" + i);
-            Console.WriteLine("ints[0]"+ints[0]);
-            Console.WriteLine("Calling someFunction");
-            SomeFunction(ints,i);
-            Console.WriteLine("i"+i);
-            Console.WriteLine("int[0]"+ints[0]);
+//    class Protest
+//    {
+//        static void SomeFunction(int[] ints ,int i )
+//        {
+//            ints[0]= 100;
+//            i = 100;
+//        }
+//        static void Main()
+//        {
+//            int i = 0;
+//            int[] ints = { 0, 1, 2, 4, 8 };
+//            Console.WriteLine("i" + i);
+//            Console.WriteLine("ints[0]"+ints[0]);
+//            Console.WriteLine("Calling someFunction");
+//            SomeFunction(ints,i);
+//            Console.WriteLine("i"+i);
+//            Console.WriteLine("int[0]"+ints[0]);
 
-        }
-    }
-}
+//        }
+//    }
+//}
