@@ -4,7 +4,8 @@
 
 //namespace ConsoleApp2
 //{
-//    class Class10
+//    class 
+
 //    {
 //      public class Shape
 
