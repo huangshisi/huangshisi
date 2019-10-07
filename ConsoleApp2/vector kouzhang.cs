@@ -5,18 +5,18 @@ using System.Text;
 
 namespace ConsoleApp2
 {
-    class Class11
+    class Vector1
     {
-      struct Vector
+        struct Vector
         {
             public double x, y, z;
-            public Vector (double x,double y,double  z)
+            public Vector(double x, double y, double z)
             {
                 this.x = x;
                 this.y = y;
                 this.z = z;
             }
-            public Vector (Vector rhs)
+            public Vector(Vector rhs)
             {
                 x = rhs.x;
                 y = rhs.y;
@@ -24,7 +24,7 @@ namespace ConsoleApp2
             }
             public override string ToString()
             {
-                return" ("+x+","+y+","+z+")";
+                return " (" + x + "," + y + "," + z + ")";
             }
             public static Vector operator +(Vector lhs, Vector rhs)
             {
@@ -32,19 +32,30 @@ namespace ConsoleApp2
                 result.x += rhs.x;
                 result.y += rhs.y;
                 result.z += rhs.z;
-                return  result;
+                return result;
             }
-            public static Vector operator*(double lhs,Vector rhs)
+            public static Vector operator *(double lhs, Vector rhs)
             {
-                return new Vector(lhs * rhs.x, lhs * rhs.y, lhs *rhs .z) ;
+                return new Vector(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
             }
-            public static Vector operator*(Vector lhs,double rhs)
+            public static Vector operator *(Vector lhs, double rhs)
             {
-                return new Vector(rhs*lhs);
+                return new Vector(rhs * lhs);
             }
-             public static double operator*(Vector lhs,Vector rhs)
+            public static double operator *(Vector lhs, Vector rhs)
             {
-                return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z; 
+                return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
+            }
+            public static bool operator==(Vector lhs,Vector rhs)
+            {
+                if (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z)
+                    return true;
+                else
+                    return false;
+            }
+            public static bool operator !=(Vector lhs,Vector rhs)
+            {
+                return !(lhs == rhs);
             }
             static void Main()
             {
@@ -55,13 +66,30 @@ namespace ConsoleApp2
                 Console.WriteLine("vector1=" + vector1);
                 Console.WriteLine("vector2=" + vector2);
                 Console.WriteLine("vector3=vector1+vector2=" + vector3);
-                Console.WriteLine("2*vector3 ="+2*vector3);
+                Console.WriteLine("2*vector3 =" + 2 * vector3);
                 vector3 += vector2;
-                Console.WriteLine("vect3=vect2 gives"+vector3);
+                Console.WriteLine("vect3=vect2 gives" + vector3);
                 vector3 = vector1 * 2;
-                Console.WriteLine("Setting vect3=vect1*2 gives"+vector3);
+                Console.WriteLine("Setting vect3=vect1*2 gives" + vector3);
                 double dot = vector1 * vector3;
-                Console.WriteLine("vect1*vect3="+dot);
+                Console.WriteLine("vect1*vect3=" + dot);
+
+
+                Vector vector4, vector5, vector6;
+                vector4 = new Vector(3.0, 3.0, -10.0);
+                vector5 = new Vector(3.0, 3.0, -10.0);
+                vector6 = new Vector(2.0, 3.0,6.0);
+                Console.WriteLine("vect4==vect5 returns="+(vector4 ==vector5 ));
+                Console.WriteLine("vect4==vect6 returns=" + (vector4 == vector6));
+                Console.WriteLine("vect5==vect6 returns=" + (vector5 == vector6));
+                Console.WriteLine();
+                Console.WriteLine("vect4!=vect5 returns=" + (vector4 != vector5));
+                Console.WriteLine("vect4!=vect6 returns=" + (vector4 != vector6));
+                Console.WriteLine("vect5!=vect6 returns=" + (vector5 != vector6));
+                Console.ReadLine();
+
+
+
                 Console.ReadLine();
             }
         }
